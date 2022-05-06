@@ -19,3 +19,27 @@ npm run build
 ```
 npm run lint
 ```
+
+---
+
+### CAS Configs
+
+#### Properties
+```
+cas.properties:
+...
+cas.http-web-request.cors.enabled=true
+cas.http-web-request.cors.allow-origins[0]=*
+```
+
+#### Service
+```
+{
+  "@class": "org.apereo.cas.services.OidcRegisteredService",
+  "clientId": "client",
+  "serviceId": "^http(s)?://.*",
+  "name": "OIDC",
+  "id": 100,
+  "scopes" : [ "java.util.HashSet", [ "profile", "openid" ] ]
+}
+```
