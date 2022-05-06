@@ -10,8 +10,8 @@ const idsrvAuth = createOidcAuth(
   SignInType.Popup,
   appRootUrl,
   {
-    authority: 'https://demo.identityserver.io/',
-    client_id: 'interactive.public', // 'implicit.shortlived',
+    authority: '/cas/oidc',
+    client_id: 'client', // 'implicit.shortlived',
     response_type: 'code',
     scope: 'openid profile email api',
     // test use

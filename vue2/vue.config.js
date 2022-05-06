@@ -30,5 +30,17 @@ module.exports = {
       })
     }
   },
-  parallel: process.env.NODE_ENV !== 'production'
+  parallel: process.env.NODE_ENV !== 'production',
+  devServer: {
+    https: true,
+    proxy: {
+      '/cas': {
+        logLevel: 'debug',
+        target: 'https://cas.example.org:8443',
+        ws: true,
+        changeOrigin: true
+      }
+    }
+  }
 }
+
